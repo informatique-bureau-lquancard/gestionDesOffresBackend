@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Negociant {
+public class Partenaire {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,16 +20,16 @@ public class Negociant {
 	private String nom;
 	private Date date_maj;
 	private Date date_crea;
-	@Column(nullable = false, updatable = false)
-	private String negociantCode;
+//	@Column(nullable = false, updatable = false)
+//	private String partenaireCode;
 	
 	
-	public Negociant() {
+	public Partenaire() {
 	}
 
 
-	public Negociant(Long id, String pays_id, String type_partenaire_id, String nom, Date date_maj, Date date_crea,
-			String negociantCode) {
+	public Partenaire(Long id, String pays_id, String type_partenaire_id, String nom, Date date_maj, Date date_crea,
+			String partenaireCode) {
 		super();
 		this.id = id;
 		this.pays_id = pays_id;
@@ -37,8 +37,19 @@ public class Negociant {
 		this.nom = nom;
 		this.date_maj = date_maj;
 		this.date_crea = date_crea;
-		this.negociantCode = negociantCode;
 	}
+	
+//	public Partenaire(Long id, String pays_id, String type_partenaire_id, String nom, Date date_maj, Date date_crea,
+//			String partenaireCode) {
+//		super();
+//		this.id = id;
+//		this.pays_id = pays_id;
+//		this.type_partenaire_id = type_partenaire_id;
+//		this.nom = nom;
+//		this.date_maj = date_maj;
+//		this.date_crea = date_crea;
+//		this.partenaireCode = partenaireCode;
+//	}
 
 
 	public Long getId() {
@@ -101,22 +112,13 @@ public class Negociant {
 	}
 
 
-	public String getNegociantCode() {
-		return negociantCode;
-	}
-
-
-	public void setNegociantCode(String negociantCode) {
-		this.negociantCode = negociantCode;
-	}
-
-	
-
-
-
-	
-	
-	
-	
+//	public String getPartenaireCode() {
+//		return partenaireCode;
+//	}
+//
+//
+//	public void setPartenaireCode(String partenaireCode) {
+//		this.partenaireCode = partenaireCode;
+//	}
 	
 }
