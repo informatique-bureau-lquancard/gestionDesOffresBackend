@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,11 +12,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.blq.fr.gestionDesOffresBackend.model.Partenaire;
 import com.blq.fr.gestionDesOffresBackend.service.PartenaireService;
 
+@CrossOrigin(origins = "http://192.168.100.178:4200")
+//@CrossOrigin(origins = "http://127.0.0.1:8080")
 @RestController
 @RequestMapping("/partenaire")
 public class PartenaireResource {
@@ -28,6 +32,7 @@ public class PartenaireResource {
 	}
 	
 	@GetMapping("/all")
+//	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public ResponseEntity<List<Partenaire>> getAllPartenaires() {
 		
 		List<Partenaire> partenaires = partenaireService.findAllPartenaires();
