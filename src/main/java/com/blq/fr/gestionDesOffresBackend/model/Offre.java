@@ -8,18 +8,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name = "stock_offres")
+//@Entity(name = "stock_offres")
+@Entity(name = "offres_view")
 public class Offre {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(nullable = false, updatable = false)
 	private Long id;
-	private String partenaire_vendeur_id;
-	private String vin_id;
-	private String millesime_id;
-	private String format_id;
-	private String conditionnement_id;
+	private String partenaire;
+	private String vin;
+	private String millesime;
+	private String format;
+	
+	private int quantite;
+	private double prix;
+	
+	private String conditionnement;
 	private String commentaires;
 	private Date date_maj;
 	private Date date_crea;
@@ -27,15 +32,17 @@ public class Offre {
 	public Offre() {
 	}
 
-	public Offre(Long id, String partenaire_vendeur_id, String vin_id, String millesime_id, String format_id,
-			String conditionnement_id, String commentaires, Date date_maj, Date date_crea) {
+	public Offre(Long id, String partenaire, String vin, String millesime, String format, int quantite,
+			double prix, String conditionnement, String commentaires, Date date_maj, Date date_crea) {
 		super();
 		this.id = id;
-		this.partenaire_vendeur_id = partenaire_vendeur_id;
-		this.vin_id = vin_id;
-		this.millesime_id = millesime_id;
-		this.format_id = format_id;
-		this.conditionnement_id = conditionnement_id;
+		this.partenaire = partenaire;
+		this.vin = vin;
+		this.millesime = millesime;
+		this.format = format;
+		this.quantite = quantite;
+		this.prix = prix;
+		this.conditionnement = conditionnement;
 		this.commentaires = commentaires;
 		this.date_maj = date_maj;
 		this.date_crea = date_crea;
@@ -49,44 +56,60 @@ public class Offre {
 		this.id = id;
 	}
 
-	public String getPartenaire_vendeur_id() {
-		return partenaire_vendeur_id;
+	public String getPartenaire() {
+		return partenaire;
 	}
 
-	public void setPartenaire_vendeur_id(String partenaire_vendeur_id) {
-		this.partenaire_vendeur_id = partenaire_vendeur_id;
+	public void setPartenaire(String partenaire) {
+		this.partenaire = partenaire;
 	}
 
-	public String getVin_id() {
-		return vin_id;
+	public String getVin() {
+		return vin;
 	}
 
-	public void setVin_id(String vin_id) {
-		this.vin_id = vin_id;
+	public void setVin(String vin) {
+		this.vin = vin;
 	}
 
-	public String getMillesime_id() {
-		return millesime_id;
+	public String getMillesime() {
+		return millesime;
 	}
 
-	public void setMillesime_id(String millesime_id) {
-		this.millesime_id = millesime_id;
+	public void setMillesime(String millesime) {
+		this.millesime = millesime;
 	}
 
-	public String getFormat_id() {
-		return format_id;
+	public String getFormat() {
+		return format;
 	}
 
-	public void setFormat_id(String format_id) {
-		this.format_id = format_id;
+	public void setFormat(String format) {
+		this.format = format;
 	}
 
-	public String getConditionnement_id() {
-		return conditionnement_id;
+	public int getQuantite() {
+		return quantite;
 	}
 
-	public void setConditionnement_id(String conditionnement_id) {
-		this.conditionnement_id = conditionnement_id;
+	public void setQuantite(int quantite) {
+		this.quantite = quantite;
+	}
+
+	public double getPrix() {
+		return prix;
+	}
+
+	public void setPrix(double prix) {
+		this.prix = prix;
+	}
+
+	public String getConditionnement() {
+		return conditionnement;
+	}
+
+	public void setConditionnement(String conditionnement) {
+		this.conditionnement = conditionnement;
 	}
 
 	public String getCommentaires() {
@@ -113,6 +136,6 @@ public class Offre {
 		this.date_crea = date_crea;
 	}
 
-	
+
 	
 }
