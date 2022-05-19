@@ -8,8 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-//@Entity(name = "stock_offres")
-@Entity(name = "offres_view")
+@Entity(name = "offres_view2")
+//@Entity(name = "offres_view")
 public class Offre {
 	
 	@Id
@@ -18,7 +18,7 @@ public class Offre {
 	private Long id;
 	private String partenaire;
 	private String vin;
-	private String millesime;
+	private int millesime;
 	private String format;
 	
 	private int quantite;
@@ -32,7 +32,7 @@ public class Offre {
 	public Offre() {
 	}
 
-	public Offre(Long id, String partenaire, String vin, String millesime, String format, int quantite,
+	public Offre(Long id, String partenaire, String vin, int millesime, String format, int quantite,
 			double prix, String conditionnement, String commentaires, Date date_maj, Date date_crea) {
 		super();
 		this.id = id;
@@ -72,11 +72,11 @@ public class Offre {
 		this.vin = vin;
 	}
 
-	public String getMillesime() {
+	public int getMillesime() {
 		return millesime;
 	}
 
-	public void setMillesime(String millesime) {
+	public void setMillesime(int millesime) {
 		this.millesime = millesime;
 	}
 

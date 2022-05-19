@@ -8,15 +8,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "partenaires_view")
 public class Partenaire {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(nullable = false, updatable = false)
 	private Long id;
-	private String pays_id;
-	private String type_partenaire_id;
+	private String pays;
+	private String type_partenaire;
 	private String nom;
 	private Date date_maj;
 	private Date date_crea;
@@ -28,12 +28,12 @@ public class Partenaire {
 	}
 
 
-	public Partenaire(Long id, String pays_id, String type_partenaire_id, String nom, Date date_maj, Date date_crea,
+	public Partenaire(Long id, String pays, String type_partenaire, String nom, Date date_maj, Date date_crea,
 			String partenaireCode) {
 		super();
 		this.id = id;
-		this.pays_id = pays_id;
-		this.type_partenaire_id = type_partenaire_id;
+		this.pays = pays;
+		this.type_partenaire = type_partenaire;
 		this.nom = nom;
 		this.date_maj = date_maj;
 		this.date_crea = date_crea;
@@ -62,23 +62,23 @@ public class Partenaire {
 	}
 
 
-	public String getPays_id() {
-		return pays_id;
+	public String getPays() {
+		return pays;
 	}
 
 
-	public void setPays_id(String pays_id) {
-		this.pays_id = pays_id;
+	public void setPays(String pays) {
+		this.pays = pays;
 	}
 
 
-	public String getType_partenaire_id() {
-		return type_partenaire_id;
+	public String getType_partenaire() {
+		return type_partenaire;
 	}
 
 
-	public void setType_partenaire_id(String type_partenaire_id) {
-		this.type_partenaire_id = type_partenaire_id;
+	public void setType_partenaire(String type_partenaire) {
+		this.type_partenaire = type_partenaire;
 	}
 
 

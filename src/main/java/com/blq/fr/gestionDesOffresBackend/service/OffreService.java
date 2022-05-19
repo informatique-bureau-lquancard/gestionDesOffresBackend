@@ -1,12 +1,9 @@
 package com.blq.fr.gestionDesOffresBackend.service;
 
 import java.util.List;
-import java.util.UUID;
 
 import javax.transaction.Transactional;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;

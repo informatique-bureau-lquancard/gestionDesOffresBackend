@@ -21,7 +21,7 @@ import com.blq.fr.gestionDesOffresBackend.service.PartenaireService;
 @CrossOrigin(origins = "http://192.168.100.178:4200")
 //@CrossOrigin(origins = "http://127.0.0.1:8080")
 @RestController
-@RequestMapping("/partenaire")
+@RequestMapping("/partenaires_view")
 public class PartenaireResource {
 	
 	private final PartenaireService partenaireService;

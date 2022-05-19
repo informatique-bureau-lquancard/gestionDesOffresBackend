@@ -38,7 +38,7 @@ public class OffreDataAccess {
 		PreparedStatement ps = null;
 		ResultSet rs;
 		
-		String sql = "select * from offres_view";
+		String sql = "select * from offres_view2";
 		
 		try {
 			

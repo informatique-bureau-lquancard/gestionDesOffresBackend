@@ -17,7 +17,7 @@ import com.blq.fr.gestionDesOffresBackend.model.Partenaire;
 import com.blq.fr.gestionDesOffresBackend.repo.PartenaireRepo;
 
 @Service
-@CacheConfig(cacheNames = {"partenaire"})
+@CacheConfig(cacheNames = {"partenaires_view"})
 @Transactional
 public class PartenaireService {
 	
