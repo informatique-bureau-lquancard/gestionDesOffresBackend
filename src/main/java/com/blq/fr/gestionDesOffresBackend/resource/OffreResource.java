@@ -22,7 +22,6 @@ import com.blq.fr.gestionDesOffresBackend.service.PartenaireService;
 
 @CrossOrigin(origins = "http://192.168.100.178:4200")
 @RestController
-//@RequestMapping("/stock_offres")
 @RequestMapping("/offres_view")
 public class OffreResource {
 	

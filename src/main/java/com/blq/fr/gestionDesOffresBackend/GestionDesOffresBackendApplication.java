@@ -1,52 +1,33 @@
 package com.blq.fr.gestionDesOffresBackend;
 
-import java.util.Arrays;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
+import org.springframework.cache.annotation.EnableCaching;
 
+import com.blq.fr.gestionDesOffresBackend.repo.PartenaireRepo;
+import com.blq.fr.gestionDesOffresBackend.service.PartenaireService;
+
+//Mise en cache
+//@EnableCaching
 @SpringBootApplication
 public class GestionDesOffresBackendApplication {
+	
+	private final PartenaireRepo partenaireRepo = null;
 
 	public static void main(String[] args) {
 		
+		//Initialisation avec un fichier batch
+//		String cheminAccessInit = "../gestionDesOffresBackend/src/main/resources/static/batchs/init_GestionDesOffresBackendApplication.bat";
+//		Batch init_tunnel_ssh = new Batch(cheminAccessInit);
+		
 		SpringApplication.run(GestionDesOffresBackendApplication.class, args);
+		
+		// Autre façon de se connecter, pour faire des connexions à plusieurs bases
+//		OffreDataAccess offreDataAccess = new OffreDataAccess();
+//		List<Offre> list = offreDataAccess.getAll();
+		
 
 	}
-
-// Ne marche pas quand on le met, sécurité supplémentaire au niveau des connexions
-//	@Bean
-//	public CorsFilter corsFilter() {
-//
-//		CorsConfiguration corsConfiguration = new CorsConfiguration();
-//
-//		corsConfiguration.setAllowCredentials(true);
-//		corsConfiguration.setAllowedOrigins(Arrays.asList( "http://localhost:4200" ) );
-//		corsConfiguration.setAllowedHeaders(Arrays.asList( "*" ));
-////		corsConfiguration.setAllowedHeaders(Arrays.asList(
-////				"Origin", "Access-Control-Allow-Origin", "Content-Type",
-////				"Accept", "Authorization", "Origin, Accept", "X-Requested-With",
-////				"Access-Control-Request-Method", "Access-Control-Request-Headers"
-////				));
-//		corsConfiguration.setExposedHeaders(Arrays.asList("*"));
-//
-////		corsConfiguration.setExposedHeaders(Arrays.asList(
-////				"Origin", "Content-Type", "Accept", "Authorization",
-////				"Access-Control-Allow-Origin", "Access-Control-Allow-Credentials"));
-//
-//		corsConfiguration.setAllowedMethods(Arrays.asList( 
-//				"GET", "POST", "PUT", "DELETE", "OPTIONS"
-//				));
-//
-//		UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
-//
-//		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
-//
-//		return new CorsFilter(urlBasedCorsConfigurationSource);
-//	}
 
 }

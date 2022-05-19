@@ -5,7 +5,11 @@ import java.util.UUID;
 
 import javax.transaction.Transactional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.blq.fr.gestionDesOffresBackend.exception.UserNotFoundException;
@@ -13,8 +17,11 @@ import com.blq.fr.gestionDesOffresBackend.model.Partenaire;
 import com.blq.fr.gestionDesOffresBackend.repo.PartenaireRepo;
 
 @Service
+@CacheConfig(cacheNames = {"partenaire"})
 @Transactional
 public class PartenaireService {
+	
+//	private static final Logger LOG = LoggerFactory.getLogger(PartenaireService.class);
 	
 	private final PartenaireRepo partenaireRepo;
 
@@ -30,6 +37,7 @@ public class PartenaireService {
 //		return partenaireRepo.save(partenaire);
 //	}
 	
+	@Cacheable
 	public List<Partenaire> findAllPartenaires() {
 		
 		System.out.println(partenaireRepo.findAll());
