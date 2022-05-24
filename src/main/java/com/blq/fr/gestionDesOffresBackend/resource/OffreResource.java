@@ -20,7 +20,8 @@ import com.blq.fr.gestionDesOffresBackend.service.OffreService;
 import com.blq.fr.gestionDesOffresBackend.service.PartenaireService;
 
 
-@CrossOrigin(origins = "http://192.168.100.178:4200")
+//@CrossOrigin(origins = "http://192.168.100.178:4200")
+@CrossOrigin(origins = "http://192.168.100.16:4200")
 @RestController
 @RequestMapping("/offres_view2")
 //@RequestMapping("/offres_view")

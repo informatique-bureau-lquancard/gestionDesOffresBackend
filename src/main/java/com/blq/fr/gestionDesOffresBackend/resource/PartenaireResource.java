@@ -18,8 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.blq.fr.gestionDesOffresBackend.model.Partenaire;
 import com.blq.fr.gestionDesOffresBackend.service.PartenaireService;
 
-@CrossOrigin(origins = "http://192.168.100.178:4200")
-//@CrossOrigin(origins = "http://127.0.0.1:8080")
+@CrossOrigin(origins = "http://192.168.100.16:4200")
 @RestController
 @RequestMapping("/partenaires_view")
 public class PartenaireResource {
