@@ -1,5 +1,7 @@
 package com.blq.fr.gestionDesOffresBackend.resource;
 
+import static com.blq.fr.gestionDesOffresBackend.GestionDesOffresBackendApplication.OFFRES_VIEW;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,8 +10,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.blq.fr.gestionDesOffresBackend.GestionDesOffresBackendApplication;
 import com.blq.fr.gestionDesOffresBackend.model.Offre;
 
+//Sera utile pour faire des connexions entre plusieurs bases de données
 public class OffreDataAccess {
 	
 	String db = "bd_blq";
@@ -38,7 +42,7 @@ public class OffreDataAccess {
 		PreparedStatement ps = null;
 		ResultSet rs;
 		
-		String sql = "select * from offres_view2";
+		String sql = "select * from " + OFFRES_VIEW;
 		
 		try {
 			

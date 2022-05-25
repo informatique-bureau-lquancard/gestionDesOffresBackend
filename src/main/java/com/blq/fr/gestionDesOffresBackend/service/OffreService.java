@@ -1,11 +1,14 @@
 package com.blq.fr.gestionDesOffresBackend.service;
 
+import static com.blq.fr.gestionDesOffresBackend.GestionDesOffresBackendApplication.OFFRES_VIEW;
+
 import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +16,8 @@ import com.blq.fr.gestionDesOffresBackend.exception.UserNotFoundException;
 import com.blq.fr.gestionDesOffresBackend.model.Offre;
 import com.blq.fr.gestionDesOffresBackend.repo.OffreRepo;
 
-@Service
-@CacheConfig(cacheNames = {"offre"})
+@Service(OFFRES_VIEW)
+@CacheConfig(cacheNames = {OFFRES_VIEW})
 @Transactional
 public class OffreService {
 	
@@ -25,13 +28,6 @@ public class OffreService {
 		this.offreRepo = offreRepo;
 	}
 	
-//	public Partenaire addPartenaire(Partenaire partenaire) { 
-//		
-//		partenaire.setPartenaireCode(UUID.randomUUID().toString());
-//		
-//		return partenaireRepo.save(partenaire);
-//	}
-	
 	@Cacheable
 	public List<Offre> findAllOffres() {
 		
@@ -40,10 +36,27 @@ public class OffreService {
 		return offreRepo.findAll();
 	}
 	
-	public Offre updateOffre(Offre offre) {
-		
-		return offreRepo.save(offre);
-	}
+//	@CacheEvict(value = "test", allEntries = true )
+//	public void refreshAllProducts() {};
+//	
+//	public void slowDownLookupOperation() {
+//		try {
+//			
+//			long time = 10000L;
+//			Thread.sleep(time);
+//			
+//		} catch (Exception e) {
+//			
+//			findAll();
+//			
+//			throw new IllegalStateException(e);
+//		}
+//	}
+	
+//	public Offre updateOffre(Offre offre) {
+//		
+//		return offreRepo.save(offre);
+//	}
 	
 	public Offre findOffreById(Long id) {
 		

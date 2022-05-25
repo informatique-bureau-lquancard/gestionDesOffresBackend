@@ -31,11 +31,11 @@ public class CaffeineCache implements CommandLineRunner {
 		exemple();
 		
 		//Données récupérées depuis le cache
-//		exemple();
-//		
-//		exemple();
-//		
-//		exemple();
+		exemple();
+		
+		exemple();
+		
+		exemple();
 
 	}
 	

@@ -1,5 +1,8 @@
 package com.blq.fr.gestionDesOffresBackend.model;
 
+import static com.blq.fr.gestionDesOffresBackend.GestionDesOffresBackendApplication.OFFRES_VIEW;
+
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -8,8 +11,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name = "offres_view2")
-//@Entity(name = "offres_view")
+import com.blq.fr.gestionDesOffresBackend.GestionDesOffresBackendApplication;
+
+@Entity(name = OFFRES_VIEW)
+//public class Offre implements Serializable {
 public class Offre {
 	
 	@Id
@@ -136,6 +141,9 @@ public class Offre {
 		this.date_crea = date_crea;
 	}
 
-
+	//Utiliser pour l'utilisation de cache
+//	public int hashCode() {
+//		return id.intValue();
+//	}
 	
 }

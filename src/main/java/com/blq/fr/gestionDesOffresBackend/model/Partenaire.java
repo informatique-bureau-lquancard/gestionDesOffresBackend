@@ -1,5 +1,8 @@
 package com.blq.fr.gestionDesOffresBackend.model;
 
+import static com.blq.fr.gestionDesOffresBackend.GestionDesOffresBackendApplication.PARTENAIRES_VIEW;
+
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -8,7 +11,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name = "partenaires_view")
+import com.blq.fr.gestionDesOffresBackend.GestionDesOffresBackendApplication;
+
+@Entity(name = PARTENAIRES_VIEW)
 public class Partenaire {
 	
 	@Id
@@ -20,9 +25,6 @@ public class Partenaire {
 	private String nom;
 	private Date date_maj;
 	private Date date_crea;
-//	@Column(nullable = false, updatable = false)
-//	private String partenaireCode;
-	
 	
 	public Partenaire() {
 	}
@@ -38,19 +40,6 @@ public class Partenaire {
 		this.date_maj = date_maj;
 		this.date_crea = date_crea;
 	}
-	
-//	public Partenaire(Long id, String pays_id, String type_partenaire_id, String nom, Date date_maj, Date date_crea,
-//			String partenaireCode) {
-//		super();
-//		this.id = id;
-//		this.pays_id = pays_id;
-//		this.type_partenaire_id = type_partenaire_id;
-//		this.nom = nom;
-//		this.date_maj = date_maj;
-//		this.date_crea = date_crea;
-//		this.partenaireCode = partenaireCode;
-//	}
-
 
 	public Long getId() {
 		return id;
@@ -110,15 +99,10 @@ public class Partenaire {
 	public void setDate_crea(Date date_crea) {
 		this.date_crea = date_crea;
 	}
-
-
-//	public String getPartenaireCode() {
-//		return partenaireCode;
-//	}
-//
-//
-//	public void setPartenaireCode(String partenaireCode) {
-//		this.partenaireCode = partenaireCode;
+	
+//	//Utiliser pour l'utilisation de cache
+//	public int hashCode() {
+//		return id.intValue();
 //	}
 	
 }

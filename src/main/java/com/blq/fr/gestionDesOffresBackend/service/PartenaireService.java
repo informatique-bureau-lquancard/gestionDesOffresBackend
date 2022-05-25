@@ -1,5 +1,7 @@
 package com.blq.fr.gestionDesOffresBackend.service;
 
+import static com.blq.fr.gestionDesOffresBackend.GestionDesOffresBackendApplication.PARTENAIRES_VIEW;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -12,16 +14,17 @@ import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import com.blq.fr.gestionDesOffresBackend.GestionDesOffresBackendApplication;
 import com.blq.fr.gestionDesOffresBackend.exception.UserNotFoundException;
 import com.blq.fr.gestionDesOffresBackend.model.Partenaire;
 import com.blq.fr.gestionDesOffresBackend.repo.PartenaireRepo;
 
 @Service
-@CacheConfig(cacheNames = {"partenaires_view"})
+@CacheConfig(cacheNames = { PARTENAIRES_VIEW })
 @Transactional
 public class PartenaireService {
 	
-//	private static final Logger LOG = LoggerFactory.getLogger(PartenaireService.class);
+	private static final Logger LOG = LoggerFactory.getLogger(PartenaireService.class);
 	
 	private final PartenaireRepo partenaireRepo;
 
@@ -29,13 +32,6 @@ public class PartenaireService {
 	public PartenaireService(PartenaireRepo partenaireRepo) {
 		this.partenaireRepo = partenaireRepo;
 	}
-	
-//	public Partenaire addPartenaire(Partenaire partenaire) { 
-//		
-//		partenaire.setPartenaireCode(UUID.randomUUID().toString());
-//		
-//		return partenaireRepo.save(partenaire);
-//	}
 	
 	@Cacheable
 	public List<Partenaire> findAllPartenaires() {
