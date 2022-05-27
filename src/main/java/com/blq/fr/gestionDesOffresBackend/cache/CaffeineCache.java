@@ -27,15 +27,15 @@ public class CaffeineCache implements CommandLineRunner {
 		
 		start = System.currentTimeMillis();
 
-		//Données récupérées et mis en cache
-		exemple();
-		
-		//Données récupérées depuis le cache
-		exemple();
-		
-		exemple();
-		
-		exemple();
+//		//Données récupérées et mis en cache
+//		exemple();
+//		
+//		//Données récupérées depuis le cache
+//		exemple();
+//		
+//		exemple();
+//		
+//		exemple();
 
 	}
 	

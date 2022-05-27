@@ -9,6 +9,7 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.stereotype.Service;
 
 import com.blq.fr.gestionDesOffresBackend.cache.CaffeineCacheConfig;
+import com.blq.fr.gestionDesOffresBackend.messagerie.EnvoyerEmail;
 import com.blq.fr.gestionDesOffresBackend.repo.PartenaireRepo;
 import com.blq.fr.gestionDesOffresBackend.resource.OffreResource;
 import com.blq.fr.gestionDesOffresBackend.service.OffreService;
@@ -19,7 +20,7 @@ public class GestionDesOffresBackendApplication {
 	
 	private final PartenaireRepo partenaireRepo = null;
 	
-	public static final String OFFRES_VIEW = "offres_view2";
+	public static final String OFFRES_VIEW = "offres_view";
 	public static final String PARTENAIRES_VIEW = "partenaires_view";
 	public static final String URL_VM_DEV = "http://192.168.100.16";
 	public static final String PORT_CLIENT = "4200";
@@ -31,6 +32,8 @@ public class GestionDesOffresBackendApplication {
 //		Batch init_tunnel_ssh = new Batch(cheminAccessInit);
 		
 		SpringApplication.run(GestionDesOffresBackendApplication.class, args);
+		
+//		new EnvoyerEmail().envoyer();
 		
 		// Autre façon de se connecter, pour faire des connexions à plusieurs bases
 //		OffreDataAccess offreDataAccess = new OffreDataAccess();
